@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 // Correct Order: Define routes before handling non-existing routes
-app.use('/api/users', router);
+app.use('/', router);
 
 // Handle 404 for non-existent routes
 app.use((req, res) => {

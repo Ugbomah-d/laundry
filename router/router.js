@@ -4,11 +4,11 @@ const router = express.Router();
 const db = require('../database/cloud');
 
 // Define a route
-router.get('/', (req, res) => {
+router.get('/check', (req, res) => {
     res.send('Users API is working!');
 });
 
-router.get('/list', (req, res) => {
+router.get('/fetch/users', (req, res) => {
   const query = 'SELECT * FROM users'; // SQL query to fetch all users
 
   db.query(query, (err, results) => {
@@ -20,6 +20,8 @@ router.get('/list', (req, res) => {
       }
   });
 });
+
+// router.post
 
 
 module.exports = router;
