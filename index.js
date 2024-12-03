@@ -14,18 +14,7 @@ app.use((req, res) => {
     res.status(404).json({ error: 'Route not found' });
 });
 
-// Route to fetch all users from the schema's table
-app.get('/api/users', (req, res) => {
-    const query = 'SELECT * FROM customers'; // Adjust 'users' to your table name
-    db.query(query, (err, results) => {
-        if (err) {
-            console.error('Error fetching data:', err);
-            res.status(500).json({ error: 'Database error' });
-        } else {
-            res.json(results);
-        }
-    });
-});
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
